@@ -1,4 +1,4 @@
 export type UserCredentials = {
-    user: string
+    mail: string
     password: string
 }
