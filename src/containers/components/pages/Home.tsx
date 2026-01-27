@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom"
-import Button from "../common/Button"
+import ButtonCustom from "../common/ButtonCustom"
 
 const Home = () => {
 
@@ -12,7 +12,7 @@ const Home = () => {
                 Benvenuto!
                 <br></br>
             </h1>
-                <Button type={"button"} textContext="Login" 
+                <ButtonCustom type={"button"} textContext="Login" 
                 onClick={()=> history.push("/login")}/>
         </div>
     )

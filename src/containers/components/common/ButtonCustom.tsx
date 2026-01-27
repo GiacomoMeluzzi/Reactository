@@ -5,7 +5,7 @@ type ButtonProps = {
         className?: string
     }
 
-const Button = ({type, onClick, textContext, className="btn btn-Primary"}:
+const ButtonCustom = ({type, onClick, textContext, className="btn btn-primary"}:
      ButtonProps) => {
 
     return (
@@ -16,4 +16,4 @@ const Button = ({type, onClick, textContext, className="btn btn-Primary"}:
         </button>
          )}
 
-export default Button
+export default ButtonCustom

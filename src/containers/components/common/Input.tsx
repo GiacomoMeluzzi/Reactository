@@ -5,12 +5,10 @@ type InputProp = {
     textContext?: string
 }
 
-const Input = ({type, id, textContext, className = "form-control"}: InputProp) => {
+const Input = ({type, id, className}: InputProp) => {
 
     return (
-        <input type={type} className={className} id={id}>
-            {textContext}
-        </input>
+            <input type={type} className={className} id={id}/>
     )
 }
 
