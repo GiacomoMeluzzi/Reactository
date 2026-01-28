@@ -81,6 +81,7 @@ const Register = () => {
                 <ButtonCustom type={"button"} onClick={handleReset} textContext="Cancella dati"/>
                 
                 <ModalCustom 
+                    type={0}
                     show={show} 
                     handleClose={handleClose} 
                     textContext={"Registrazione effettuata!"} 

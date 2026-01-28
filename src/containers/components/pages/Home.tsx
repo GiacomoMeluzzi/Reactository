@@ -26,10 +26,9 @@ const Home = () => {
             </h1>
 
             <ModalCustom 
+                type={1}
                 show={show}
-                handleClose={handleClose}
-                textContext="Sono una modale"
-                title="Ciao, tonno!"
+                handleClose={handleClose}           
             />
 
             <ButtonCustom
@@ -48,7 +47,7 @@ const Home = () => {
                 type={"button"} 
                 onClick={()=>history.push("/users")} 
                 textContext="Tabella"
-                />
+            />
             
         </div>
     )

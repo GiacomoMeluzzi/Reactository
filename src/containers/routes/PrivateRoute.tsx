@@ -15,8 +15,12 @@ const PrivateRoute = ({children}: PropsPrivateRoute) => {
 
     if(!isLogged) {            
             return (
-                <ModalCustom show={show} handleClose={handleClose} 
-                textContext={"Devi loggarti!"} title={"Login richiesto"}>                    
+                <ModalCustom 
+                    type={0}
+                    show={show} 
+                    handleClose={handleClose} 
+                    textContext={"Devi loggarti!"} 
+                    title={"Login richiesto"}>                    
                 </ModalCustom>
             )            
     }
