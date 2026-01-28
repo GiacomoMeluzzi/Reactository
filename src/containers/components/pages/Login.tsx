@@ -2,11 +2,12 @@ import { Container } from "react-bootstrap";
 import Input from "../common/Input";
 import ButtonCustom from "../common/ButtonCustom";
 import { useState } from "react";
-import type { UserCredentials } from "../common/type/CommonType";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import type { UserState } from "../../../store/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../../store/userSlice";
+import type { UserState } from "../../../store/userSlice";
+import type { RootState } from "../../../store/store";
+import type { UserCredentials } from "../common/type/CommonType";
 
 const Login = ()=>{
 
@@ -14,17 +15,17 @@ const Login = ()=>{
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [userCredentials] = useState<UserCredentials>({mail: "malu@mail.it", password: "123"})
+    const list = useSelector((state : RootState) => state.userlist.users)
 
-
-const HandleSubmit = () => {
-    if (email === userCredentials.mail && password === userCredentials.password) {
-        dispatch(setUser({user: "malu", email} as UserState))
-        history.push("/loggedhome")
+    const HandleSubmit = () => {
+        const utente = list.find(e => e.mail === email && e.password === password) as UserCredentials
+        if (utente) {  
+            dispatch(setUser({user: utente.user, email} as UserState))
+            history.push("/loggedhome")
+        }
     }
-}
 
-return (
+    return (
             <Container className="d-flex justify-content-center align-items-center min-vh-100">
                 <form className="p-5 border rounded bg-light" style={{width: "700px"}}>
 

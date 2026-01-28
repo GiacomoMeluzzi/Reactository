@@ -12,7 +12,7 @@ export const userSlice = createSlice({
     name: 'user',
     initialState, 
     reducers: {
-        // riceve stato della slice, action è il payload
+        // riceve stato della slice, action porta payload
         setUser: (state, action: PayloadAction<UserState>) =>{
             state.user     = action.payload.user
             state.email    = action.payload.email

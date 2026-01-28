@@ -5,7 +5,7 @@ type ButtonProps = {
         className?: string
     }
 
-const ButtonCustom = ({type, onClick, textContext, className="btn btn-primary"}:
+const ButtonCustom = ({type, onClick, textContext, className="btn btn-primary ms-2 mt-2"}:
      ButtonProps) => {
 
     return (

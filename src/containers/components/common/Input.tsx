@@ -1,5 +1,5 @@
 type InputProp = {
-    type: "text" | "number" | "password" | "email" | "checkbox"
+    type: "text" | "number" | "password" | "email" | "checkbox" | "date"
     className?: string
     id: string
     textContext?: string
@@ -16,3 +16,5 @@ const Input = ({type, id, className, setGenerico, value}: InputProp) => {
 }
 
 export default Input
+
+export type {InputProp}
