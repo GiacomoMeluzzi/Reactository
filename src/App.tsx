@@ -1,5 +1,5 @@
 import './App.css'
-import MainRouter from './containers/components/common/MainRouter'
+import MainRouter from './containers/routes/MainRouter'
 
 function App() {
 

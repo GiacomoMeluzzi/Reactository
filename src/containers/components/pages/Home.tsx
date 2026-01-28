@@ -5,6 +5,16 @@ const Home = () => {
 
     const history = useHistory()
 
+    /*
+    const handleChange = (e.changeEvent<HTMLElement>) => {
+        const {nome, value} = e.target
+        setFormData({
+        ...FormData,
+        [nome] : value
+        })
+    }
+     */
+
     return (
 
         <div>   
@@ -21,7 +31,7 @@ const Home = () => {
                 onClick={()=> history.push("/registrazione")}/>
             </div>
 
-            <ButtonCustom type={"button"} onClick={()=>history.push("/users")} textContext="Tabella"/>
+            
         </div>
     )
 

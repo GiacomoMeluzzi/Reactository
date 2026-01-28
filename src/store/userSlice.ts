@@ -4,6 +4,7 @@ export type UserState = {
     user:  string
     email: string
     isLogged: boolean
+    role?: "USER" | "ADMIN"
 }
 
 const initialState: UserState = {user: '', email: '', isLogged:false} 
