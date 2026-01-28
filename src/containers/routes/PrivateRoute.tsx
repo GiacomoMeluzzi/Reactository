@@ -1,7 +1,8 @@
-import type { ReactNode } from "react"
+import {type ReactNode } from "react"
 import type { RootState } from "../../store/store.ts"
 import { useSelector } from "react-redux"
-import { useHistory } from "react-router-dom"
+import ModalCustom from "../components/common/ModalCustom.tsx"
+import useModal from "../components/hooks/useModal.ts"
 
 type PropsPrivateRoute = {
     children: ReactNode
@@ -9,12 +10,15 @@ type PropsPrivateRoute = {
 
 const PrivateRoute = ({children}: PropsPrivateRoute) => {
 
-    const history = useHistory()
     const isLogged = useSelector((state: RootState) => state.user.isLogged)
+    const {show, handleClose} = useModal({path: "/login", initialShow: true})
 
-    if(!isLogged) {
-        history.push("/login")
-        alert("Devi loggarti, pippa!")
+    if(!isLogged) {            
+            return (
+                <ModalCustom show={show} handleClose={handleClose} 
+                textContext={"Devi loggarti!"} title={"Login richiesto"}>                    
+                </ModalCustom>
+            )            
     }
 
     return (

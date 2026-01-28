@@ -13,10 +13,10 @@ const MainRouter = () => {
             <Router>
                 <Switch>
                     <Route path="/login" component={Login}/>
+                    <Route path="/registrazione" component={Register}/>
                     <PrivateRoute>
                         <Route path="/home" component={Home}/>
                         <Route path="/loggedhome" component={LoggedHome}/>
-                        <Route path="/registrazione" component={Register}/>
                         <Route path="/users" component={Users}/>
                     </PrivateRoute>
                 </Switch>

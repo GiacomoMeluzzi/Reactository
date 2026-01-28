@@ -1,19 +1,21 @@
+/*
+const handleChange = (e.changeEvent<HTMLElement>) => {
+    const {nome, value} = e.target
+    setFormData({
+    ...FormData,
+    [nome] : value
+    })
+}
+ */
 import { useHistory } from "react-router-dom"
 import ButtonCustom from "../common/ButtonCustom"
+import useModal from "../hooks/useModal"
+import ModalCustom from "../common/ModalCustom"
 
 const Home = () => {
 
     const history = useHistory()
-
-    /*
-    const handleChange = (e.changeEvent<HTMLElement>) => {
-        const {nome, value} = e.target
-        setFormData({
-        ...FormData,
-        [nome] : value
-        })
-    }
-     */
+    const {show, handleClose, openModal} = useModal({initialShow:false})
 
     return (
 
@@ -22,15 +24,31 @@ const Home = () => {
                 Benvenuto!
                 <br></br>
             </h1>
-            <div>
-                <ButtonCustom type={"button"} textContext="Login" 
-                onClick={()=> history.push("/login")}/>
-            </div>
-            <div>
-                <ButtonCustom type={"button"} textContext="Registrati" 
-                onClick={()=> history.push("/registrazione")}/>
-            </div>
 
+            <ModalCustom 
+                show={show}
+                handleClose={handleClose}
+                textContext="Sono una modale"
+                title="Ciao, tonno!"
+            />
+
+            <ButtonCustom
+                type="button"
+                textContext="Modal!"
+                onClick={()=> openModal()}
+            />
+
+            <ButtonCustom 
+                type={"button"} 
+                textContext="Registrati" 
+                onClick={()=> history.push("/registrazione")}
+            />
+
+            <ButtonCustom 
+                type={"button"} 
+                onClick={()=>history.push("/users")} 
+                textContext="Tabella"
+                />
             
         </div>
     )

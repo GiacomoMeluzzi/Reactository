@@ -1,6 +1,6 @@
-import { Container } from "react-bootstrap";
 import Input from "../common/Input";
 import ButtonCustom from "../common/ButtonCustom";
+import { Container } from "react-bootstrap";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,7 +21,7 @@ const Login = ()=>{
         const utente = list.find(e => e.mail === email && e.password === password) as UserCredentials
         if (utente) {  
             dispatch(setUser({user: utente.user, email} as UserState))
-            history.push("/loggedhome")
+            history.push("/home")
         }
     }
 
@@ -42,10 +42,13 @@ const Login = ()=>{
                         <Input id="password" type="password" value={password}
                          textContext="Password" setGenerico={setPassword}/>
                     </div>
-                    <div>
-                        <ButtonCustom type={"button"} textContext="Login!"
+                    
+                    <ButtonCustom type={"button"} textContext="Login!"
                         onClick={HandleSubmit}/>
-                    </div>
+
+                    <ButtonCustom type={"button"} textContext="Registrati!"
+                        onClick={() => history.push("/registrazione")}/>
+
                 </form>                
             
             </Container> )
